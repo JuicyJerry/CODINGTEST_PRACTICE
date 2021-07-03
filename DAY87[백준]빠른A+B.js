@@ -1,3 +1,4 @@
+//#1
 const readline = require("readline");
 const rl = readline.createInterface({
   input: process.stdin,
@@ -22,3 +23,15 @@ rl.on("line", function (line) {
 
   process.exit();
 });
+
+//#2
+let input = require("fs").readFileSync("/dev/stdin").toString().split("\n");
+let answer = "";
+let num = Number(input[0]);
+
+for (let i = 1; i <= num; i++) {
+  answer +=
+    Number(input[i].split(" ")[0]) + Number(input[i].split(" ")[1]) + "\n";
+}
+
+console.log(answer);
