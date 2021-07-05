@@ -1,3 +1,5 @@
+//! #1
+
 // let input = require('fs').readFileSync('/dev/stdin').toString().split('\n').map((el) => Number(el));
 let input = require("fs")
   .readFileSync("/dev/stdin")
@@ -19,4 +21,18 @@ for (let i = 0; i < 10; i++) {
   } else {
     console.log(0);
   }
+}
+
+//! #2
+let input = require("fs").readFileSync("/dev/stdin").toString().split("\n");
+let result = (input[0] * input[1] * input[2]).toString();
+let numsObj = {};
+
+for (let i = 0; i < result.length; i++) {
+  numsObj[result[i]] = numsObj[result[i]] ? (numsObj[result[i]] += 1) : 1;
+}
+
+for (let i = 0; i < 10; i++) {
+  if (numsObj[i]) console.log(numsObj[i]);
+  else console.log(0);
 }

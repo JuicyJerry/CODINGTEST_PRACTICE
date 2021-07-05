@@ -53,3 +53,28 @@ for (let i = 0; i < restArr.length; i++) {
 }
 
 console.log(notOverrideArr.length);
+
+//! #3
+/*
+    주어진 수의 나머지를 A 배열에 추가한다.
+    순회하면서 indexOf 메서드를 이용해, 중복되는 수가 없으면 B 배열에 추가한다.
+    B 배열의 길이를 반환한다.
+    
+    => 
+*/
+
+let input = require("fs").readFileSync("/dev/stdin").toString().split("\n");
+
+let numbers = [];
+for (let i = 0; i < 10; i++) {
+  numbers.push(Number(input[i]));
+}
+
+let restArr = numbers.map((el) => el % 42);
+let notOverrideArr = [];
+for (let i = 0; i < restArr.length; i++) {
+  if (notOverrideArr.indexOf(restArr[i]) === -1)
+    notOverrideArr.push(restArr[i]);
+}
+
+console.log(notOverrideArr.length);
